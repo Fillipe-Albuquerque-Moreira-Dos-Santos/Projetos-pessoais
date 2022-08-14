@@ -3,17 +3,16 @@ package Program;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
-
 import entities.Conta;
 import entities.Pessoa;
 
 public class Program {
-
+	
+	
 	static Scanner sc = new Scanner(System.in).useLocale(Locale.US);
 	static ArrayList<Conta> ContasBancarias;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		ContasBancarias = new ArrayList<Conta>();
 		operacoes();
@@ -22,7 +21,7 @@ public class Program {
 
 	public static void operacoes() {
 		System.out.println("------------------------------------------------------------------");
-		System.out.println("------------------Bem vindos a nossa Agência----------------------");
+		System.out.println("------------------Bem vindos a Agência Feliz-----------------------");
 		System.out.println("------------------------------------------------------------------");
 		System.out.println("----------Selecione uma operação que deseja realizar--------------");
 		System.out.println("------------------------------------------------------------------");
@@ -65,18 +64,18 @@ public class Program {
 	public static void CriarConta() {
 
 		System.out.println("\nNome: ");
-		String nome = sc.nextLine();
+		String nome = sc.next();
 		sc.nextLine();
 
 		System.out.println("\nCPF: ");
-		String cpf = sc.nextLine();
+		String cpf = sc.next();
 
 		System.out.println("\nEmail: ");
-		String email = sc.nextLine();
-
+		String email = sc.next();
+		
 		Pessoa pessoa = new Pessoa(nome, cpf, email);
 		Conta conta = new Conta(pessoa);
-
+		
 		ContasBancarias.add(conta);
 		System.out.println("Sua conta foi criada com sucesso! ");
 
@@ -162,5 +161,4 @@ public class Program {
 		}
 		operacoes();
 	}
-
 }
